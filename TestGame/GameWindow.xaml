@@ -1,0 +1,124 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestGame"
+    xmlns:Models="clr-namespace:Engine.Models;assembly=Engine" x:Class="TestGame.GameWindow"
+    mc:Ignorable="d"
+    Title="GameWindow" Height="459" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBox x:Name="mainTextBox" BorderThickness="5" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="386" Height="362" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" VerticalScrollBarVisibility="Auto" FontSize="15" TextChanged="TextBox_TextChanged" Margin="0,13,0,0" BorderBrush="#FF6F7692" Background="White" IsReadOnly="True"/>
+        <Grid x:Name="mapGrid" Margin="623,47,19,265" UseLayoutRounding="False" Background="Black">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ToolTip=""/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="mapPos44" Grid.Row="4" Grid.Column="4" Background="White" Click="mapPos44_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos43" Grid.Row="4" Grid.Column="3" Background="White" Click="mapPos43_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos42" Grid.Row="4" Grid.Column="2" Background="White" Click="mapPos42_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos41" Grid.Row="4" Grid.Column="1" Background="White" Click="mapPos41_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos40" Grid.Row="4" Grid.Column="0" Background="White" Click="mapPos40_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos34" Grid.Row="3" Grid.Column="4" Background="White" Click="mapPos34_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos33" Grid.Row="3" Grid.Column="3" Background="White" Click="mapPos33_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos32" Grid.Row="3" Grid.Column="2" Background="White" Click="mapPos32_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos31" Grid.Row="3" Grid.Column="1" Background="White" Click="mapPos31_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos30" Grid.Row="3" Grid.Column="0" Background="White" Click="mapPos30_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos24" Grid.Row="2" Grid.Column="4" Background="White" Click="mapPos24_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos23" Grid.Row="2" Grid.Column="3" Background="White" Click="mapPos23_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos22" Grid.Row="2" Grid.Column="2" Background="White" Click="mapPos22_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos21" Grid.Row="2" Grid.Column="1" Background="White" Click="mapPos21_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos20" Grid.Row="2" Grid.Column="0" Background="White" Click="mapPos20_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos14" Grid.Row="1" Grid.Column="4" Background="White" Click="mapPos14_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos13" Grid.Row="1" Grid.Column="3" Background="White" Click="mapPos13_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos12" Grid.Row="1" Grid.Column="2" Background="White" Click="mapPos12_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos11" Grid.Row="1" Grid.Column="1" Background="White" Click="mapPos11_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos10" Grid.Row="1" Grid.Column="0" Background="White" Click="mapPos10_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos04" Grid.Row="0" Grid.Column="4" Background="White" Click="mapPos04_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos03" Grid.Row="0" Grid.Column="3" Background="White" Click="mapPos03_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos02" Grid.Row="0" Grid.Column="2" Background="White" Click="mapPos02_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos01" Grid.Row="0" Grid.Column="1" Background="White" Click="mapPos01_Click" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="mapPos00" Grid.Row="0" Grid.Column="0" Background="White" Click="mapPos00_Click" Visibility="Collapsed" IsEnabled="False"/>
+        </Grid>
+        <Button x:Name="quitButton" BorderThickness="2" BorderBrush="Black" Content="Quit" HorizontalAlignment="Left" Margin="702,380,0,0" VerticalAlignment="Top" Click="quitButton_Click" FontSize="15" Width="70" Height="32"/>
+        <TextBox x:Name="userInputTextBox" BorderThickness="5" HorizontalAlignment="Center" Margin="0,380,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="386" Height="32" FontSize="15" Text="Testing Text" KeyDown="TextBox_KeyDown"/>
+        <TabControl Margin="10,217,598,10">
+            <TabItem Header="Character">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="33*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="38*"/>
+                        <ColumnDefinition Width="55*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Strength:" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Height="26" Width="58"/>
+                    <Label Content="Wisdom:" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Height="26" Width="58"/>
+                    <Label Content="Dexerity:" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="26" Width="58"/>
+                    <Label Content="Level:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="9,0,0,0" Height="26" Width="39"/>
+                    <Label Grid.Column="1" Content="{Binding Path=Strength}" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center" Grid.Row="1" Height="26"/>
+                    <Label Grid.Column="1" Content="{Binding Path=Dexerity}" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center" Grid.Row="2" Height="26"/>
+                    <Label Grid.Column="1" Content="{Binding Path=Wisdom}" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center" Grid.Row="3" Height="26"/>
+                    <Label Grid.Column="1" Content="{Binding Path=Level}" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center" Height="26"/>
+                    <Label Content="Gold:" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="4" Height="26" Width="58" Margin="0,3,0,0"/>
+                    <Label Grid.Column="1" Content="{Binding Path=Gold}" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Grid.Row="4" Height="26"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Equipment">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox x:Name="weaponComboBox" Text="Weapons" HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="Name" IsReadOnly="True" SelectedIndex="0" SelectionChanged="weaponComboBox_SelectionChanged" MaxDropDownHeight="130">
+
+                    </ComboBox>
+                    <ComboBox x:Name="armorComboBox" Text="Weapons" HorizontalAlignment="Center" Margin="0,78,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="Name" IsReadOnly="True" SelectedIndex="0" SelectionChanged="weaponComboBox_SelectionChanged" MaxDropDownHeight="130">
+                    </ComboBox>
+                    <ComboBox x:Name="spellComboBox" Text="Weapons" HorizontalAlignment="Center" Margin="0,121,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="Name" IsReadOnly="True" SelectedIndex="0" SelectionChanged="weaponComboBox_SelectionChanged" MaxDropDownHeight="130">
+                    </ComboBox>
+                    <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="Weapons" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Center" Margin="0,57,0,0" TextWrapping="Wrap" Text="Armor" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Center" Margin="0,100,0,0" TextWrapping="Wrap" Text="Spells" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Inventory">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox x:Name="potionComboBox" HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="Name"/>
+                    <ComboBox x:Name="ingredientComboBox" HorizontalAlignment="Center" Margin="0,78,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="Name"/>
+                    <ComboBox x:Name="keyItemComboBox" HorizontalAlignment="Center" Margin="0,121,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="Name"/>
+                    <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="Potions" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Center" Margin="0,57,0,0" TextWrapping="Wrap" Text="Ingredients" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Center" Margin="0,100,0,0" TextWrapping="Wrap" Text="Key Items" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="saveButton" BorderThickness="2" BorderBrush="Black" Content="Save" HorizontalAlignment="Left" Margin="598,380,0,0" VerticalAlignment="Top" FontSize="15" Width="70" Height="32" Click="saveButton_Click" />
+        <Label x:Name="playerHpLabel" BorderThickness="2" BorderBrush="Black" Content="{Binding Path=DisplayHealth}" HorizontalAlignment="Left" Margin="26,13,0,0" VerticalAlignment="Top" FontSize="15" Width="160" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="37" FontStretch="Condensed"/>
+        <Label x:Name="staminaLabel" BorderThickness="2" BorderBrush="Black" Content="{Binding Path=DisplayStamina}" HorizontalAlignment="Left" Margin="26,55,0,0" VerticalAlignment="Top" FontSize="15" Width="160" HorizontalContentAlignment="Center" Height="38"/>
+        <Label x:Name="manaLabel" BorderThickness="2" BorderBrush="Black" Content="{Binding DisplayMana}" HorizontalAlignment="Left" Margin="26,98,0,0" VerticalAlignment="Top" FontSize="15" Width="160" HorizontalContentAlignment="Center" Height="36"/>
+        <Button x:Name="lookButton" BorderThickness="2" BorderBrush="Black" Content="Look" HorizontalAlignment="Left" Margin="26,180,0,0" VerticalAlignment="Top" Height="32" Width="70" Click="lookButton_Click"/>
+        <Button x:Name="searchButton" BorderThickness="2" BorderBrush="Black" Content="Search" HorizontalAlignment="Left" Margin="116,181,0,0" VerticalAlignment="Top" Height="31" Width="70" RenderTransformOrigin="0.601,0.923" Click="searchButton_Click"/>
+        <Label x:Name="experienceLabel" BorderThickness="2" BorderBrush="Black" Content="{Binding DisplayExperience}" HorizontalAlignment="Left" Margin="26,139,0,0" VerticalAlignment="Top" FontSize="15" Width="160" HorizontalContentAlignment="Center" FontStretch="Normal" Height="36"/>
+        <Button x:Name="enterExitButton" BorderThickness="2" BorderBrush="Black" Content="Button" HorizontalAlignment="Left" Margin="658,215,0,0" VerticalAlignment="Top" Height="32" Width="70" Click="enterExitButton_Click"/>
+        <Label x:Name="characterPosLabel" Content="Town Exit" HorizontalAlignment="Left" Margin="614,179,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="158" FontSize="15"/>
+        <Label x:Name="locationLabel" Content="Town" HorizontalAlignment="Left" Margin="614,13,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="158" FontSize="15"/>
+
+    </Grid>
+</Window>

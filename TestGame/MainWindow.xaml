@@ -1,0 +1,45 @@
+﻿<Window x:Class="TestGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestGame"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Button x:Name="mainMenuButton" Content="Start" HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Width="176" FontSize="36" Click="mainMenuButton_Click" BorderThickness="0" Background="{x:Null}" Visibility="Hidden" ToolTip="Start Game"/>
+        <Button x:Name="newGameButton" Content="New Game" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Height="70" Width="175" FontSize="30" Click="newGameButton_Click" Margin="526,49,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Disabled" UseLayoutRounding="False" Visibility="Hidden" Grid.IsSharedSizeScope="True" MaxWidth="175"/>
+        <Button x:Name="goBackButton" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Height="70" Width="175" FontSize="30" Click="goBackButton_Click" Margin="526,305,0,0" Visibility="Hidden" Grid.IsSharedSizeScope="True" MaxWidth="175"/>
+        <Button x:Name="loadGameButton" HorizontalAlignment="Left" VerticalAlignment="Center"  Background="White" Height="70" Width="175" FontSize="30" Click="loadGameButton_Click" Margin="526,0,0,0" FontStretch="Medium" Content="Load Game" Padding="1,1,1,1" Grid.IsSharedSizeScope="True" UseLayoutRounding="False" MaxWidth="175" Visibility="Hidden"/>
+        <ListBox x:Name="raceList" HorizontalAlignment="Left" Margin="42,151,0,105" FontSize="25" SelectionChanged="raceList_SelectionChanged" MaxWidth="130" MaxHeight="177" Visibility="Hidden" >
+            <ListBoxItem x:Name="humanListBoxItem" Content="Human"/>
+            <ListBoxItem x:Name="pygmyListBoxItem" Content="Pygmy"/>
+            <ListBoxItem x:Name="dragonkinListBoxItem" Content="Dragonkin"/>
+            <ListBoxItem x:Name="abyssianListBoxItem" Content="Abyssian"/>
+        </ListBox>
+        <Label x:Name="selectRaceLabel" Content="Select Race" HorizontalAlignment="Left" Margin="27,28,0,0" VerticalAlignment="Top" Height="55" Width="160" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Visibility="Hidden"/>
+        <Button x:Name="createPlayerButton" Content="Create" HorizontalAlignment="Left" Margin="42,358,0,0" VerticalAlignment="Top" FontSize="30" Width="164" Height="45" Click="createPlayerButton_Click" Visibility="Hidden"/>
+        <RadioButton x:Name="maleRadioButton" Content="Male" HorizontalAlignment="Left" Margin="27,93,0,0" VerticalAlignment="Top" GroupName="Sex" IsChecked="True" FontSize="20" Visibility="Hidden" Checked="maleRadioButton_Checked"/>
+        <RadioButton x:Name="femaleRadioButton" Content="Female" HorizontalAlignment="Left" Margin="130,93,0,0" VerticalAlignment="Top" GroupName="Sex" FontSize="20" Visibility="Hidden" Checked="femaleRadioButton_Checked"/>
+        <TextBox x:Name="userInputNameTextBox" HorizontalAlignment="Left" Margin="255,358,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="316" Height="45" RenderTransformOrigin="0.5,0.5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" MaxLength="20" TextChanged="userInputNameTextBox_TextChanged" Visibility="Hidden" MaxLines="1">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.024"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <ListBox x:Name="playersClassList" HorizontalAlignment="Left" Margin="265,151,0,105" FontSize="25" SelectionChanged="playerClass_SelectionChanged" MaxWidth="130" MaxHeight="177" Visibility="Hidden">
+            <ListBoxItem x:Name="nomandListBoxItem" Content="Nomand"/>
+            <ListBoxItem x:Name="warriorListBoxItem" Content="Warrior"/>
+            <ListBoxItem x:Name="savantListBoxItem" Content="Savant"/>
+            <ListBoxItem x:Name="neomanListBoxItem" Content="Neoman"/>
+        </ListBox>
+        <Label x:Name="selectPlayerClassLabel" Content="Select Class" HorizontalAlignment="Left" Margin="240,78,0,0" VerticalAlignment="Top" Height="55" Width="160" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Visibility="Hidden"/>
+        <Button x:Name="playerCreationBackButton" Content="Back" HorizontalAlignment="Left" Margin="678,358,0,0" VerticalAlignment="Top" Width="94" Height="45" FontSize="20" Visibility="Hidden" Click="playerCreationBackButton_Click"/>
+        <TextBox x:Name="playerClassTextBox" HorizontalAlignment="Left" Margin="488,209,0,0" TextWrapping="Wrap" Text="Text" VerticalAlignment="Top" Width="281" Height="131" ScrollViewer.CanContentScroll="True" VerticalScrollBarVisibility="Auto" IsReadOnly="True" FontSize="20" Visibility="Hidden"/>
+        <TextBox x:Name="playerRaceTextBox" HorizontalAlignment="Left" Margin="491,35,0,0" TextWrapping="Wrap" Text="Text" VerticalAlignment="Top" Width="281" Height="131" ScrollViewer.CanContentScroll="True" VerticalScrollBarVisibility="Auto" IsReadOnly="True" FontSize="20" Visibility="Hidden"/>
+    </Grid>
+</Window>
